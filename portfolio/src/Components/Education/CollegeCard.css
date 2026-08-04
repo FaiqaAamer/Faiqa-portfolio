@@ -1,0 +1,49 @@
+.college-card-wrapper {
+  position: relative;
+  width: 250px;
+  margin: 30px auto;
+}
+
+.card-bg {
+  width: 100%;
+  display: block;
+}
+
+.card-info {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 63%;
+  height: 44%;
+  text-align: center;
+  color: #0a0a0a;
+  font-family: 'Special Elite', monospace;
+  background: none;
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.edu-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-bottom: 4px;
+}
+
+.card-info h2 {
+  margin: 0;
+}
+
+.card-info p {
+  font-size: 9px;
+  margin: 3px 0;
+  line-height: 1.3;
+}

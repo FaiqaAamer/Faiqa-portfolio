@@ -1,0 +1,51 @@
+.school-card-wrapper {
+  position: relative;
+  width: 250px;
+  margin: 30px auto;
+}
+
+.card-bg {
+  width: 100%;
+  display: block;
+}
+
+.card-info {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;            
+  height: auto;         
+  text-align: center;
+  color: #0a0a0a;
+  font-family: 'Special Elite', monospace;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.card-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.edu-logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  margin-bottom: 4px;
+}
+
+.card-info h2 {
+  font-size: 14px;
+  color: #b3894f;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.card-info p {
+  font-size: 10px;
+  margin: 5px 0;
+  line-height: 1.4;
+}
