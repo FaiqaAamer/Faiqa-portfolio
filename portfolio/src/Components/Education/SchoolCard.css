@@ -1,27 +1,61 @@
 .school-card-wrapper{
-    position:relative;
-    width:250px;
-    height:430px;
+    position: relative;
+    width: 250px;
+    height: 430px;
+}
+
+/* Whole hanging object */
+.hanger{
+    position: absolute;
+    inset: 0;
+
+    /* Pivot at the top of the ribbon */
+    transform-origin: 50% 55px;
+}
+
+/* Swing animation */
+.swing{
+    animation: swingCard 2.5s ease-in-out;
+}
+
+@keyframes swingCard{
+
+    0%{
+        transform: rotate(0deg);
+    }
+
+    25%{
+        transform: rotate(20deg);
+    }
+
+    75%{
+        transform: rotate(-20deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
 }
 
 /* Ribbon */
 .ribbon{
-    position:absolute;
-    top:13%;
-    left:49%;
-    transform:translateX(-50%);
-    width:60px;          /* adjust to your ribbon image */
-    z-index:5;
+    position: absolute;
+    top: 13%;
+    left: 49%;
+    transform: translateX(-50%);
+    width: 60px;
     height: 140px;
+    z-index: 5;
+    cursor: pointer;
 }
 
 /* Card */
 .school-card{
-    position:absolute;
-    top:37.5%;           /* place the card directly under the ribbon */
-    left:51%;
-    transform:translateX(-50%);
-    width:200px;
+    position: absolute;
+    top: 37.5%;
+    left: 51%;
+    width: 200px;
+    transform: translateX(-50%);
 }
 
 /* Card image */
@@ -33,34 +67,38 @@
 /* Text */
 .school-card-info{
     position:absolute;
-    top:14%;
-    left:49%;
+    top:15%;
+    left:45%;
     transform:translateX(-50%);
-    width:72%;
+    width:62%;
     text-align:center;
-    height: auto;
-    color: #0a0a0a;
-    font-family: 'Special Elite', monospace;
-    border-radius: 10px;
-    padding: 12px;
+    height:73%;
+    color:#0a0a0a;
+    font-family:'Special Elite', monospace;
+    border-radius:10px;
+    padding:10px;
+    margin-left:9px;
+    margin-top:10px;
+    background-color:#f8ead6;
 }
 
 .school-logo{
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    margin-bottom: -9px;
+    width:50px;
+    height:50px;
+    object-fit:contain;
+    margin-top:-5px;
+    margin-bottom:-9px;
 }
 
 .school-card-info h2{
-    font-size: 10px;
-    color: #b3894f;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    font-size:10px;
+    color:#b3894f;
+    margin-bottom:10px;
+    text-transform:uppercase;
 }
 
 .school-card-info p{
-    font-size: 10px;
-    margin: 5px 0;
-    line-height: 1.4;
+    font-size:9px;
+    margin:5px 0;
+    line-height:1.4;
 }

@@ -4,63 +4,104 @@
     height:430px;
 }
 
+/* Hanging object */
+.college-hanger{
+    position:absolute;
+    inset:0;
+    transform-origin:50% 55px;
+}
+
+/* Animation */
+.swing{
+    animation:swingCard 2.5s ease-in-out;
+}
+
+@keyframes swingCard{
+
+    0%{
+        transform:rotate(0deg);
+    }
+
+    25%{
+        transform:rotate(20deg);
+    }
+
+    75%{
+        transform:rotate(-20deg);
+    }
+
+    100%{
+        transform:rotate(0deg);
+    }
+}
+
+
 /* Ribbon */
 .ribbon{
     position:absolute;
     top:13%;
     left:49%;
     transform:translateX(-50%);
-    width:60px;          /* adjust to your ribbon image */
+    width:60px;
+    height:140px;
     z-index:5;
-    height: 140px;
+    cursor:pointer;
 }
+
 
 /* Card */
 .college-card{
     position:absolute;
-    top:37.5%;           /* place the card directly under the ribbon */
+    top:37.5%;
     left:51%;
-    transform:translateX(-50%);
     width:200px;
+    transform:translateX(-50%);
 }
 
-/* Card image */
+
 .college-card-bg{
     width:100%;
     display:block;
 }
 
+
 /* Text */
 .college-card-info{
     position:absolute;
-    top:17%;
-    left:49%;
+    top:15%;
+    left:45%;
     transform:translateX(-50%);
-    width:72%;
+    width:62%;
+    height:73%;
     text-align:center;
-    height: auto;
-    color: #0a0a0a;
-    font-family: 'Special Elite', monospace;
-    border-radius: 10px;
-    padding: 12px;
+    color:#0a0a0a;
+    font-family:'Special Elite', monospace;
+    border-radius:10px;
+    padding:10px;
+    margin-left:9px;
+    margin-top:10px;
+    background-color:#f8ead6;
 }
+
 
 .college-logo{
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-    margin-bottom: -5px;
+    width:40px;
+    height:40px;
+    object-fit:contain;
+    margin-bottom:-5px;
 }
+
 
 .college-card-info h2{
-    font-size: 10px;
-    color: #b3894f;
-    margin-bottom: 10px;
-    text-transform: uppercase;
+    font-size:10px;
+    color:#b3894f;
+    margin-bottom:10px;
+    text-transform:uppercase;
 }
 
+
 .college-card-info p{
-    font-size: 10px;
-    margin: 5px 0;
-    line-height: 1.4;
+    font-size:9px;
+    margin:5px 0;
+    line-height:1.4;
 }

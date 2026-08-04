@@ -6,51 +6,65 @@ import CardImage from "../../assets/Education/Plain_card.png";
 import CollegeLogo from "../../assets/Education/Pgc_logo.png";
 
 function CollegeCard() {
+
+  const handleClick = (e) => {
+    const hanger = e.currentTarget.parentElement;
+
+    hanger.classList.remove("swing");
+    void hanger.offsetWidth;
+    hanger.classList.add("swing");
+  };
+
   return (
     <div className="college-card-wrapper">
 
-      <img
-        src={RibbonImage}
-        alt="Ribbon"
-        className="ribbon"
-      />
-
-      <div className="college-card">
+      <div className="college-hanger">
 
         <img
-          src={CardImage}
-          alt="College Card"
-          className="college-card-bg"
+          src={RibbonImage}
+          alt="Ribbon"
+          className="ribbon"
+          onClick={handleClick}
         />
 
-        <div className="college-card-info">
+        <div className="college-card">
 
-          <div className="college-card-header">
+          <img
+            src={CardImage}
+            alt="College Card"
+            className="college-card-bg"
+          />
 
-            <img
-              src={CollegeLogo}
-              alt="College Logo"
-              className="college-logo"
-            />
+          <div className="college-card-info">
 
-            <h2>
-              Punjab College for Women Campus 1,
-              Gujranwala
-            </h2>
+            <div className="college-card-header">
+
+              <img
+                src={CollegeLogo}
+                alt="College Logo"
+                className="college-logo"
+              />
+
+              <h2>
+                Punjab College for Women Campus 1,
+                Gujranwala
+              </h2>
+
+            </div>
+
+            <p>
+              <strong>Degree:</strong> Intermediate in Computer Science
+            </p>
+
+            <p>
+              <strong>Duration:</strong> 2022 – 2024
+            </p>
+
+            <p>
+              <strong>Grade:</strong> A+
+            </p>
 
           </div>
-
-          <p>
-            <strong>Degree:</strong> Intermediate in Computer Science
-          </p>
-
-          <p>
-            <strong>Duration:</strong> 2022 – 2024
-          </p>
-
-          <p>
-            <strong>Grade:</strong> A+
-          </p>
 
         </div>
 

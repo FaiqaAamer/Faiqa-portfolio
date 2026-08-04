@@ -5,52 +5,73 @@ import RibbonImage from "../../assets/Education/Ribbon.png";
 import CardImage from "../../assets/Education/Plain_card.png";
 import UniLogo from "../../assets/Education/Pugc_logo.png";
 
-function UniversityCard() {
-  return (
+function UniversityCard(){
+
+  const handleClick = (e) => {
+    const hanger = e.currentTarget.parentElement;
+
+    hanger.classList.remove("swing");
+    void hanger.offsetWidth;
+    hanger.classList.add("swing");
+  };
+
+
+  return(
     <div className="uni-card-wrapper">
 
-      <img
-        src={RibbonImage}
-        alt="Ribbon"
-        className="ribbon"
-      />
-
-      <div className="uni-card">
+      <div className="uni-hanger">
 
         <img
-          src={CardImage}
-          alt="University Card"
-          className="uni-card-bg"
+          src={RibbonImage}
+          className="ribbon"
+          alt="Ribbon"
+          onClick={handleClick}
         />
 
-        <div className="uni-card-info">
 
-          <div className="uni-card-header">
+        <div className="uni-card">
 
-            <img
-              src={UniLogo}
-              alt="University Logo"
-              className="uni-logo"
-            />
+          <img
+            src={CardImage}
+            className="uni-card-bg"
+            alt="University Card"
+          />
 
-            <h2>
-              University of the Punjab,
-              Gujranwala Campus
-            </h2>
+
+          <div className="uni-card-info">
+
+            <div className="uni-card-header">
+
+              <img
+                src={UniLogo}
+                className="uni-logo"
+                alt="University Logo"
+              />
+
+
+              <h2>
+                University of the Punjab,
+                Gujranwala Campus
+              </h2>
+
+            </div>
+
+
+            <p>
+              <strong>Degree:</strong> Bachelor of Computer Science
+            </p>
+
+
+            <p>
+              <strong>Duration:</strong> 2024 – 2028
+            </p>
+
+
+            <p>
+              <strong>CGPA:</strong> 3.88 / 4.0
+            </p>
 
           </div>
-
-          <p>
-            <strong>Degree:</strong> Bachelor of Computer Science
-          </p>
-
-          <p>
-            <strong>Duration:</strong> 2024 – 2028
-          </p>
-
-          <p>
-            <strong>CGPA:</strong> 3.88 / 4.0
-          </p>
 
         </div>
 

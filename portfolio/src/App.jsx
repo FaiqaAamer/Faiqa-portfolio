@@ -3,6 +3,7 @@ import Education from "./Components/Education/Education"
 
 function App() {
   return(<>
+  <Contact></Contact>
   <Education></Education>
   </>)  
 }
