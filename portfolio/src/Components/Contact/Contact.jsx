@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { createRoot } from "react-dom/client";
 import { FaHeart, FaEnvelope, FaFileAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 import TelephoneFrontView from "../../assets/Contact/Telephone_front_view.png";
 import TelephoneBackView from "../../assets/Contact/Telephone_above_view.png";
@@ -7,12 +8,40 @@ import "./Contact.css";
 function Contact() {
   useEffect(() => {
     const LINKS = [
-      { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" },
-      { icon: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/faiqa-aamer-a84a083ab/?skipRedirect=true" },
-      { icon: "github", label: "GitHub", url: "https://github.com/FaiqaAamer" },
-      { icon: "mail", label: "Email", url: "mailto:hello@yourportfolio.com" },
-      { icon: "cv", label: "CV / Resume", url: "https://yourportfolio.com/resume.pdf" }
+        { icon: "github", label: "GitHub", url: "https://github.com/FaiqaAamer" }, // 1st github
+        { icon: "linkedin", label: "LinkedIn", url: "https://www.linkedin.com/in/faiqa-aamer-a84a083ab/" },   // 2nd linkedIn
+        { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }, // 3rd heart
+        { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }, // 4th heart
+        { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }, // 5th heart
+        { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }, // 6th heart
+        { icon: "mail", label: "Email", url: "mailto:hello@yourportfolio.com" }, // 7th email
+        { icon: "cv", label: "CV / Resume", url: "https://yourportfolio.com/resume.pdf" }, // 8th resume
+        { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }, // 9th heart
+        { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }  // 10th heart
     ];
+
+    function createHeartRain() {
+    const palette = ["#f1e9d8", "#b7976a", "#e2c085", "#c0b8a8"]; 
+    
+    for (let i = 0; i < 80; i++) {
+        const heartContainer = document.createElement("div");
+        heartContainer.className = "heart-rain";
+
+        heartContainer.style.left = Math.random() * window.innerWidth + "px";
+
+        heartContainer.style.animationDuration = Math.random() * 2 + 3 + "s";
+        heartContainer.style.animationDelay = Math.random() * 2 + "s";
+        heartContainer.style.fontSize = Math.random() * 24 + 10 + "px";
+
+        const color = palette[Math.floor(Math.random() * palette.length)];
+
+        const root = createRoot(heartContainer);
+        root.render(<FaHeart style={{ color }} />);
+
+        document.body.appendChild(heartContainer);
+        setTimeout(() => heartContainer.remove(), 7000);
+    }
+    }
 
     const HOLES = [
       [295,156.5], [324,151], [352.5,157.5], [376,174.5],
@@ -107,12 +136,19 @@ function Contact() {
       function go() {
         g.classList.add("pressed");
         setTimeout(() => {
-          g.classList.remove("pressed");
-          if (entry.url && entry.url !== "#") {
+            g.classList.remove("pressed");
+
+            if (entry.icon === "heart") {
+            createHeartRain();
+            return; 
+            }
+            
+            if (entry.url && entry.url !== "#") {
             window.open(entry.url, "_blank", "noopener");
-          }
+            }
         }, 160);
-      }
+        }
+
 
       g.addEventListener("click", e => {
         e.stopPropagation();

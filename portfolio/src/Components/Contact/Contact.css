@@ -1,8 +1,6 @@
 :root {
-  --ivory: #e1d7c0;
-  --brass: #b3894f;
+  --metalic: #c0b8a8;
   --brass-light: #e2c085;
-  --ember: #b5453a;
 }
 
 * { box-sizing: border-box; }
@@ -111,19 +109,16 @@ body {
   transition: stroke 0.2s ease;
 }
 
-/* React Icons inside dial */
 .dial-icon {
-  color: var(--ivory); /* default brass color */
+  color: var(--metalic); 
   transition: color 0.2s ease;
 }
 
-/* Hover effect: only color change, no animation */
 .hole:hover .dial-icon,
 .hole:focus-visible .dial-icon {
   color: var(--brass-light);
 }
 
-/* Accessibility helper */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -131,4 +126,26 @@ body {
   overflow: hidden;
   clip: rect(0,0,0,0);
   white-space: nowrap;
+}
+
+@keyframes heartFall {
+  0% {
+    transform: translateY(-10vh) translateX(0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(110vh) translateX(60px) scale(0.8);
+    opacity: 0.2;
+  }
+}
+
+.heart-rain {
+  position: fixed;
+  top: -10vh;
+  left: 0;
+  font-size: 20px;
+  animation-name: heartFall;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  pointer-events: none;
 }
