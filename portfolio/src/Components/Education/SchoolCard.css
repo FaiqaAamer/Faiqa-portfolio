@@ -1,44 +1,46 @@
-.school-card-wrapper{
+.school-card-wrapper {
     position: relative;
     width: 250px;
     height: 430px;
 }
 
-/* Whole hanging object */
-.hanger{
+
+/* Hanging object */
+.school-hanger {
     position: absolute;
     inset: 0;
-
-    /* Pivot at the top of the ribbon */
     transform-origin: 50% 55px;
 }
 
-/* Swing animation */
-.swing{
-    animation: swingCard 2.5s ease-in-out;
+
+/* Animation */
+.school-swing {
+    animation: schoolSwingCard 2.5s ease-in-out;
 }
 
-@keyframes swingCard{
 
-    0%{
+@keyframes schoolSwingCard {
+
+    0% {
         transform: rotate(0deg);
     }
 
-    25%{
-        transform: rotate(20deg);
+    25% {
+        transform: rotate(15deg);
     }
 
-    75%{
+    75% {
         transform: rotate(-20deg);
     }
 
-    100%{
+    100% {
         transform: rotate(0deg);
     }
 }
 
+
 /* Ribbon */
-.ribbon{
+.school-ribbon {
     position: absolute;
     top: 13%;
     left: 49%;
@@ -49,8 +51,9 @@
     cursor: pointer;
 }
 
+
 /* Card */
-.school-card{
+.school-card {
     position: absolute;
     top: 37.5%;
     left: 51%;
@@ -58,47 +61,61 @@
     transform: translateX(-50%);
 }
 
+
 /* Card image */
-.school-card-bg{
-    width:100%;
-    display:block;
+.school-card-bg {
+    width: 100%;
+    display: block;
 }
+
 
 /* Text */
-.school-card-info{
-    position:absolute;
-    top:15%;
-    left:45%;
-    transform:translateX(-50%);
-    width:62%;
-    text-align:center;
-    height:73%;
-    color:#0a0a0a;
-    font-family:'Special Elite', monospace;
-    border-radius:10px;
-    padding:10px;
-    margin-left:9px;
-    margin-top:10px;
-    background-color:#f8ead6;
+.school-card-info {
+    position: absolute;
+    top: 15%;
+    left: 45%;
+    transform: translateX(-50%);
+    width: 62%;
+    height: 73%;
+    box-sizing: border-box;
+
+    text-align: center;
+    color: #0a0a0a;
+
+    font-family: "Special Elite", monospace;
+
+    border-radius: 10px;
+    padding: 10px;
+
+    margin-left: 9px;
+    margin-top: 10px;
+
+    background-color: #f8ead6;
 }
 
-.school-logo{
-    width:50px;
-    height:50px;
-    object-fit:contain;
-    margin-top:-5px;
-    margin-bottom:-9px;
+
+/* School Logo */
+.school-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-top: -5px;
+    margin-bottom: -9px;
 }
 
-.school-card-info h2{
-    font-size:10px;
-    color:#b3894f;
-    margin-bottom:10px;
-    text-transform:uppercase;
+
+/* Heading */
+.school-card-info h2 {
+    font-size: 10px;
+    color: #b3894f;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
-.school-card-info p{
-    font-size:9px;
-    margin:5px 0;
-    line-height:1.4;
+
+/* Paragraph */
+.school-card-info p {
+    font-size: 9px;
+    margin: 5px 0;
+    line-height: 1.4;
 }

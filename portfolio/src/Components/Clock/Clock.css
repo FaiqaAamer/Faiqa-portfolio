@@ -1,0 +1,85 @@
+.clock {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+
+/* Clock face */
+.clock-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   All three hands share the same approach:
+   each image is sized/positioned so that its pivot hole
+   (the small circle baked into the artwork) lands exactly
+   on the clock's own pivot point, and transform-origin is
+   set to that same hole so rotation happens around it
+   instead of around the image's edge. That's what keeps
+   them pinned to one spot instead of sliding around.
+========================= */
+
+.clock-hand {
+    position: absolute;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* =========================
+   HOUR HAND
+========================= */
+.clock-hour-hand {
+    width: 16.13%;
+    height: 29.39%;
+
+    left: 43.36%;
+    top: 27.96%;
+
+    z-index: 2;
+
+    /* pivot hole inside the artwork, as % of this image */
+    transform-origin: 48.22% 78.27%;
+}
+
+
+/* =========================
+   MINUTE HAND
+========================= */
+.clock-minute-hand {
+    width: 11.96%;
+    height: 39.19%;
+
+    left: 45.84%;
+    top: 19.46%;
+
+    z-index: 3;
+
+    transform-origin: 44.31% 80.37%;
+}
+
+
+/* =========================
+   SECOND HAND
+========================= */
+.clock-second-hand {
+    width: 9.76%;
+    height: 56.66%;
+
+    left: 45.60%;
+    top: 14.96%;
+
+    z-index: 4;
+
+    transform-origin: 56.75% 63.53%;
+}

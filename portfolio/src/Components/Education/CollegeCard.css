@@ -1,107 +1,120 @@
-.college-card-wrapper{
-    position:relative;
-    width:250px;
-    height:430px;
+.college-card-wrapper {
+    position: relative;
+    width: 250px;
+    height: 430px;
 }
+
 
 /* Hanging object */
-.college-hanger{
-    position:absolute;
-    inset:0;
-    transform-origin:50% 55px;
+.college-hanger {
+    position: absolute;
+    inset: 0;
+    transform-origin: 50% 55px;
 }
+
 
 /* Animation */
-.swing{
-    animation:swingCard 2.5s ease-in-out;
+.college-swing {
+    animation: collegeSwingCard 2.5s ease-in-out;
 }
 
-@keyframes swingCard{
 
-    0%{
-        transform:rotate(0deg);
+@keyframes collegeSwingCard {
+
+    0% {
+        transform: rotate(0deg);
     }
 
-    25%{
-        transform:rotate(20deg);
+    25% {
+        transform: rotate(20deg);
     }
 
-    75%{
-        transform:rotate(-20deg);
+    75% {
+        transform: rotate(-20deg);
     }
 
-    100%{
-        transform:rotate(0deg);
+    100% {
+        transform: rotate(0deg);
     }
 }
 
 
 /* Ribbon */
-.ribbon{
-    position:absolute;
-    top:13%;
-    left:49%;
-    transform:translateX(-50%);
-    width:60px;
-    height:140px;
-    z-index:5;
-    cursor:pointer;
+.college-ribbon {
+    position: absolute;
+    top: 13%;
+    left: 49%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 140px;
+    z-index: 5;
+    cursor: pointer;
 }
 
 
 /* Card */
-.college-card{
-    position:absolute;
-    top:37.5%;
-    left:51%;
-    width:200px;
-    transform:translateX(-50%);
+.college-card {
+    position: absolute;
+    top: 37.5%;
+    left: 51%;
+    width: 200px;
+    transform: translateX(-50%);
 }
 
 
-.college-card-bg{
-    width:100%;
-    display:block;
+/* Card image */
+.college-card-bg {
+    width: 100%;
+    display: block;
 }
 
 
 /* Text */
-.college-card-info{
-    position:absolute;
-    top:15%;
-    left:45%;
-    transform:translateX(-50%);
-    width:62%;
-    height:73%;
-    text-align:center;
-    color:#0a0a0a;
-    font-family:'Special Elite', monospace;
-    border-radius:10px;
-    padding:10px;
-    margin-left:9px;
-    margin-top:10px;
-    background-color:#f8ead6;
+.college-card-info {
+    position: absolute;
+    top: 15%;
+    left: 45%;
+    transform: translateX(-50%);
+    width: 62%;
+    height: 73%;
+    box-sizing: border-box;
+
+    text-align: center;
+    color: #0a0a0a;
+
+    font-family: "Special Elite", monospace;
+
+    border-radius: 10px;
+    padding: 10px;
+
+    margin-left: 9px;
+    margin-top: 10px;
+
+    background-color: #f8ead6;
 }
 
 
-.college-logo{
-    width:40px;
-    height:40px;
-    object-fit:contain;
-    margin-bottom:-5px;
+/* College Logo */
+.college-logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    margin-bottom: -5px;
 }
 
 
-.college-card-info h2{
-    font-size:10px;
-    color:#b3894f;
-    margin-bottom:10px;
-    text-transform:uppercase;
+/* Heading */
+.college-card-info h2 {
+    font-size: 10px;
+    color: #b3894f;
+    margin-bottom: 10px;
+    text-transform: uppercase;
 }
 
 
-.college-card-info p{
-    font-size:9px;
-    margin:5px 0;
-    line-height:1.4;
+/* Paragraph */
+.college-card-info p {
+    font-size: 9px;
+    margin: 5px 0;
+    line-height: 1.4;
 }

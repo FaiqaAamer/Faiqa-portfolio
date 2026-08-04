@@ -10,9 +10,12 @@ function CollegeCard() {
   const handleClick = (e) => {
     const hanger = e.currentTarget.parentElement;
 
-    hanger.classList.remove("swing");
+    hanger.classList.remove("college-swing");
+
+    // Restart animation
     void hanger.offsetWidth;
-    hanger.classList.add("swing");
+
+    hanger.classList.add("college-swing");
   };
 
   return (
@@ -23,7 +26,7 @@ function CollegeCard() {
         <img
           src={RibbonImage}
           alt="Ribbon"
-          className="ribbon"
+          className="college-ribbon"
           onClick={handleClick}
         />
 
@@ -53,15 +56,18 @@ function CollegeCard() {
             </div>
 
             <p>
-              <strong>Degree:</strong> Intermediate in Computer Science
+              <strong>Degree:</strong>{" "}
+              Intermediate in Computer Science
             </p>
 
             <p>
-              <strong>Duration:</strong> 2022 – 2024
+              <strong>Duration:</strong>{" "}
+              2022 – 2024
             </p>
 
             <p>
-              <strong>Grade:</strong> A+
+              <strong>Grade:</strong>{" "}
+              A+
             </p>
 
           </div>
