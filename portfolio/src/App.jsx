@@ -3,12 +3,14 @@ import Education from "./Components/Education/Education"
 import Clock from "./Components/Clock/Clock"
 import Skills from "./Components/Skills/Skills"
 import ToggleLamp from "./Components/Toggler/ToggleLamp"
+import Project1 from "./Components/Project/Project1/Project1"
 
 function App() {
   return(<>
-  {/* <Contact></Contact> */}
+
+  {/* <Contact></Contact>
   <Clock></Clock>
-  {/* <Education></Education>
+  <Education></Education>
   <Skills></Skills>
   <ToggleLamp></ToggleLamp> */}
   </>)  
