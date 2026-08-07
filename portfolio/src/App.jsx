@@ -6,11 +6,11 @@ import ToggleLamp from "./Components/Toggler/ToggleLamp"
 
 function App() {
   return(<>
-  {/* <Contact></Contact>
+  {/* <Contact></Contact> */}
   <Clock></Clock>
-  <Education></Education>
-  <Skills></Skills> */}
-  <ToggleLamp></ToggleLamp>
+  {/* <Education></Education>
+  <Skills></Skills>
+  <ToggleLamp></ToggleLamp> */}
   </>)  
 }
 
