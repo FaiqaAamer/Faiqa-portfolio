@@ -1,0 +1,71 @@
+.chalkboard-container {
+  display: flex;
+  width: 1000px;
+  height: 70vh;
+  background: url("../../assets/Hero/board.png") no-repeat center;
+  background-size: cover;
+}
+
+.chalkboard-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+}
+
+.chalkboard-right {
+  flex: 1; /* stays empty */
+}
+
+.chalk-text {
+  margin-top: -150px;
+  text-transform: uppercase;
+  font-family: "Shadows Into Light", cursive;
+  font-weight: normal;
+  font-size: 60px;
+  background:
+    repeating-radial-gradient(#444 0 0.00003%, #ffffff 0.0004%) 50% 0/2500px 2500px,
+    repeating-conic-gradient(#555 0 0.00003%, #fefefe 0.0004%) 50% 50%/2500px 2500px;
+  background-blend-mode: screen;
+  mix-blend-mode: lighten;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: brightness(0.9) contrast(1.2);
+}
+
+.chalk-role {
+  margin-top: -50px;
+  text-transform: uppercase;
+  font-family: "Shadows Into Light", cursive;
+  font-weight: normal;
+  font-size: 30px;
+  background:
+    repeating-radial-gradient(#444 0 0.00003%, #ffffff 0.0004%) 50% 0/2500px 2500px,
+    repeating-conic-gradient(#555 0 0.00003%, #fefefe 0.0004%) 50% 50%/2500px 2500px;
+  background-blend-mode: screen;
+  mix-blend-mode: lighten;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: brightness(0.9) contrast(1.2);
+}
+
+.chalk-stick {
+  position: absolute;
+  top: 51%;          /* align with text line */
+  left: 420px;       /* start near your text padding */
+  width: 40px;       /* slightly longer */
+  height: 10px;      /* thicker chalk */
+  background: linear-gradient(145deg, #ffffff 0%, #e0e0e0 100%);
+  border-radius: 7px;
+  transform: rotate(13deg); /* scaled and tilted for realism */
+  animation: chalkMove 2s linear forwards;
+}
+
+/* 🌀 Chalk stick movement */
+@keyframes chalkMove {
+  0%   { transform: translateX(0px) rotate(13deg); opacity: 1; }
+  100% { transform: translateX(300px) rotate(13deg); opacity: 1; }
+}
