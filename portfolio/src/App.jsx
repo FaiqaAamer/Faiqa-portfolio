@@ -7,7 +7,7 @@ import Project1 from "./Components/Project/Project1/Project1"
 
 function App() {
   return(<>
-
+  <Project1></Project1>
   {/* <Contact></Contact>
   <Clock></Clock>
   <Education></Education>

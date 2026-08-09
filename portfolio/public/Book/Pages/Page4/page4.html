@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Page 4</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Papyrus', 'Georgia', serif;
+      background: transparent;
+    }
+
+    .page-bg {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #fdf6e3; /* soft paper-like background */
+    }
+
+    .title {
+      position: absolute;
+      top: 30px;
+      left: 20px;
+      font-size: 24px;
+      font-style: italic;
+      color: #5a3e2b;
+      z-index: 3;
+    }
+
+    .content {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      position: absolute;
+      top: 80px;
+      left: 20px;
+      width: 90%;
+      font-size: 15px;
+      color: #3e2e1f;
+      line-height: 1.5;
+      z-index: 3;
+    }
+
+    .paper {
+      position: absolute;
+      top: 160px;        /* adjust vertical position */
+      left: 10px;       /* adjust horizontal position */
+      width: 90%;       /* size of the paper */
+      opacity: 0.95;    /* soft blend */
+      z-index: 2;       /* behind text but above background */
+    }
+
+    .sparkle1 {
+      position: absolute;
+      top: 30px;        /* adjust vertical position */
+      right: 40px;      /* adjust horizontal position */
+      width: 70px;      /* size of sparkle */
+      opacity: 0.9;     /* soft glow */
+      z-index: 4;       /* above text and paper */
+      animation: twinkle 2s infinite alternate ease-in-out;
+    }
+
+    .sparkle2 {
+      position: absolute;
+      top: 120px;        /* adjust vertical position */
+      right: 340px;      /* adjust horizontal position */
+      width: 60px;      /* size of sparkle */
+      opacity: 0.9;     /* soft glow */
+      z-index: 4;       /* above text and paper */
+      animation: twinkle2 2s infinite alternate ease-in-out;
+    }
+
+    .sparkle3 {
+      position: absolute;
+      top: 230px;        /* adjust vertical position */
+      right: 40px;      /* adjust horizontal position */
+      width: 70px;      /* size of sparkle */
+      opacity: 0.9;     /* soft glow */
+      z-index: 4;       /* above text and paper */
+      animation: twinkle 2s infinite alternate ease-in-out;
+    }
+
+    @keyframes twinkle {
+      from { transform: scale(1) rotate(0deg); opacity: 0.7; }
+      to   { transform: scale(1.2) rotate(15deg); opacity: 1; }
+    }
+
+    @keyframes twinkle2 {
+      from { transform: scale(1) rotate(0deg); opacity: 0.7; }
+      to   { transform: scale(1.2) rotate(-15deg); opacity: 1; }
+    }
+
+    .demo-link {
+      position: absolute;
+      top: 310px;
+      left: 170px;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      z-index: 999; /* highest layer */
+      cursor: pointer;
+    }
+
+    .play-btn {
+      width: 100px;
+      margin-right: -20px;
+      opacity: 0.9;
+    }
+
+    .demo-text {
+      font-size: 20px;
+      font-style: italic;
+      color: #5a3e2b;
+    }
+
+    .demo-link:hover .demo-text {
+      color: #d17b2c;
+    }
+
+    .paper, .sparkle1, .sparkle2, .sparkle3 {
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="page-bg">
+<a href="#" id="demoLink" class="demo-link">
+  <img src="play.png" alt="Play Button" class="play-btn">
+  <span class="demo-text">Live Demo</span>
+</a>
+    <img src="paper.png" alt="Paper Decoration" class="paper">
+    <img src="sparkle.png" alt="Sparkle Decoration" class="sparkle1">
+    <img src="sparkle.png" alt="Sparkle Decoration" class="sparkle2">
+    <img src="sparkle.png" alt="Sparkle Decoration" class="sparkle3">
+    <h2 class="title">Reflections & Learnings</h2>
+    <div class="content">
+      <p>Building NoteNest taught me how to manage React state more effectively.</p>
+      <p>Deploying on Vercel and setting up SEO indexing gave me confidence in deployment workflows.</p>
+      <p>Most importantly, I discovered how to balance creativity with clean, maintainable code.</p>
+    </div>
+  </div>
+
+  <script>
+document.getElementById("demoLink").addEventListener("click", function(e) {
+  console.log("clicked"); // add this
+  e.preventDefault();
+  window.open("https://notes-app-react-t18o.vercel.app/", "_blank");
+});
+</script>
+
+</body>
+</html>

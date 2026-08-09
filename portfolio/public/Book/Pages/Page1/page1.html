@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NoteNest Title Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Papyrus', 'Georgia', serif;
+    }
+
+    /* Background container */
+    .page-bg {
+      position: relative;
+      width: 100%;       /* fixed size for the page */
+      height: 100vh;     /* fixed height */
+      margin: 40px auto;  /* center horizontally with margin */
+      background: url("bg.jpg") no-repeat center/cover;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .title {
+      position: absolute;
+      top: 7px;
+      left: 45px;
+      font-size: 42px;
+      font-style: italic;
+      font-weight: bold;
+      color: #6b5846;
+    }
+
+    .subtitle {
+      font-style: italic;
+      position: absolute;
+      top: 70px;
+      left: 45px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #8b7a6a;
+    }
+
+    .app-preview {
+      position: absolute;
+      top: 120px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90%;
+      height: 230px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .stamp {
+      position: absolute;
+      bottom: 100px;
+      right: 10px;
+      width: 100px;
+      opacity: 1;
+      transform: rotate(20deg);
+      z-index: 2;
+    }
+
+    .small-book {
+      position: absolute;
+      top: 340px;
+      left: 40px;
+      width: 130px;
+      opacity: 1;
+      transform: rotate(-15deg);
+      z-index: 2;
+    }
+
+    .star {
+      position: absolute;
+      top: 40px;       
+      left: 260px;      
+      width: 80px;      
+      opacity: 0.9;    
+      z-index: 3;       
+      animation: rotateStar 2s infinite ease-in-out;
+    }
+
+    @keyframes rotateStar {
+      0%   { transform: rotate(-10deg); }
+      50%  { transform: rotate(10deg); }
+      100% { transform: rotate(-10deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-bg">
+    <img src="small_book.png" alt="Notebook Decoration" class="small-book">
+    <h1 class="title">NoteNest</h1>
+    <p class="subtitle">A note taking app</p>
+    <img src="main.png" alt="NoteNest App Screenshot" class="app-preview">
+    <img src="stamp.png" alt="Floral Stamp Decoration" class="stamp">
+    <img src="star.png" alt="Star Decoration" class="star">
+  </div>
+</body>
+</html>

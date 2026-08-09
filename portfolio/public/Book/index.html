@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Beautiful Animated Book</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Georgia', serif;
+    }
+
+    .book {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1500px;
+      cursor: pointer;
+    }
+
+    .book-center {
+      object-fit: cover;
+    }
+
+    .book-center.cover {
+      margin-top: 17px;
+      margin-left: 300px;
+    }
+
+    .book-center.bcover {
+      margin-top: 17px;
+      margin-left: 300px;
+    }
+
+    .spiral {
+      position: absolute;
+      top: 10%;
+      left: 49.6%;
+      transform: translateX(-50%);
+      height: 520px;
+      width: 550px;
+      background: url("spiral.png") no-repeat center;
+      background-size: contain;
+      display: none;
+      z-index: 10;   /* default: above pages */
+      pointer-events: none;
+      transition: z-index 0.3s ease;
+    }
+
+    .page1, .page3 {
+      position: absolute;
+      top: -1px;
+      left: 46.1%;
+      width: 600px;
+      height: 620px;
+      border-radius: 5px;
+      transform-origin: left;
+      transition: transform 1s ease;
+      backface-visibility: hidden;
+      display: none;
+      z-index: 2;
+    }
+
+    .page2, .page4 {
+      position: absolute;
+      top: -1px;
+      left: 19.6%;
+      width: 600px;
+      height: 620px;
+      border-radius: 5px;
+      transform-origin: right;
+      transition: transform 1s ease;
+      backface-visibility: hidden;
+      display: none;
+      transform: rotateY(180deg);
+      z-index: 2;
+    }
+
+    .page1 { background: url("page1.png") no-repeat center/cover; }
+    .page2 { background: url("page2.png") no-repeat center/cover; }
+    .page3 { background: url("page3.png") no-repeat center/cover; }
+    .page4 { background: url("page4.png") no-repeat center/cover; }
+
+    .page-overlay {
+      border-radius: 5px;
+      top: 27px;
+      left: 110px;
+      position: relative;
+      width: 770px;
+      height: 1060px;
+    }
+    
+    .page-frame {
+      width: 50%;   /* full size so links inside are clickable */
+      height: 50%;
+      border: none;
+      border-radius: 5px;
+    }
+
+    .page-text {
+      position: absolute;
+      top: 50px;
+      left: 120px;
+      width: 350px;
+      color: #2c2c2c;
+      font-size: 20px;
+      line-height: 1.6;
+      backface-visibility: hidden;
+    }
+
+    .book-center.open {
+      height: 590px;
+      margin-top: 17px;
+      margin-right: 330px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .cover-title {
+      position: absolute;
+      top: 20%;
+      left: 58%;
+      transform: translate(-50%, -50%);
+      font-family: 'Papyrus', 'Georgia', serif;
+      font-size: 40px;
+      width: 100px;
+      font-weight: bold;
+      color: #cfc1b3;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+      display: none; /* hidden by default */
+      z-index: 15;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="cover-title" id="coverTitle">&nbsp;&nbsp;Project 1  NoteNest</div>
+  <div class="book" id="book">
+    <img src="Book_center.png" alt="Center" class="book-center" id="bookImage">
+    <div class="spiral" id="spiral"></div>
+
+    <div class="page1" id="page1">
+      <div class="page-overlay">
+        <iframe src="./Pages/Page1/page1.html" class="page-frame" scrolling="no"></iframe>
+      </div>
+    </div>
+
+    <div class="page2" id="page2">
+      <div class="page-overlay">
+        <iframe src="./Pages/Page2/page2.html" class="page-frame" scrolling="no"></iframe>
+      </div>
+    </div>  
+
+    <div class="page3" id="page3">
+      <div class="page-overlay">
+        <iframe src="./Pages/Page3/page3.html" class="page-frame" scrolling="no"></iframe>
+      </div>
+    </div>
+
+    <div class="page4" id="page4">
+      <div class="page-overlay">
+        <iframe src="./Pages/Page4/page4.html" class="page-frame" scrolling="no"
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+<script>
+const book = document.getElementById("bookImage");
+const spiral = document.getElementById("spiral");
+
+// Pages
+const page1 = document.getElementById("page1");
+const page2 = document.getElementById("page2");
+const page3 = document.getElementById("page3");
+const page4 = document.getElementById("page4");
+
+let state = "center";
+let currentPage = "page1";
+
+// Book open/close logic
+book.addEventListener("click", () => {
+  if (state === "center") {
+    book.src = "cover.png";
+    book.classList.add("cover");
+    document.getElementById("coverTitle").style.display = "block";
+    state = "cover";
+  } else if (state === "cover") {
+    book.src = "Book_open.png";
+    book.classList.add("open");
+    document.getElementById("coverTitle").style.display = "none";
+    spiral.style.display = "block"; 
+    spiral.style.opacity = "1"; // fade in
+
+    [page1, page2, page3, page4].forEach(p => p.style.display = "none");
+
+    if (currentPage === "page1" || currentPage === "page2") {
+      page1.style.display = "block";
+      page2.style.display = "block";
+    } else if (currentPage === "page3" || currentPage === "page4") {
+      page3.style.display = "block";
+      page4.style.display = "block";
+    }
+
+    state = "open";
+  } else if (state === "open") {
+    book.src = "backcover.png";
+    book.classList.add("bcover");
+    spiral.style.opacity = "0"; // fade out
+    setTimeout(() => { spiral.style.display = "none"; }, 600);
+
+    [page1, page2, page3, page4].forEach(p => p.style.display = "none");
+    state = "bcover";
+  } else {
+    book.src = "Book_center.png";
+    book.classList.remove("cover", "open", "bcover");
+    spiral.style.opacity = "0";
+    setTimeout(() => { spiral.style.display = "none"; }, 600);
+
+    [page1, page2, page3, page4].forEach(p => p.style.display = "none");
+    state = "center";
+  }
+});
+
+// Flip logic
+// Flip logic
+page1.addEventListener("click", () => {
+  spiral.style.zIndex = "1"; // drop behind during flip
+  page1.style.transform = "rotateY(-180deg)";
+
+  page2.style.display = "block";
+  page2.style.transform = "rotateY(0deg)";
+  page2.style.zIndex = 2;
+
+  page3.style.display = "block";
+  page3.style.transform = "rotateY(0deg)";
+  page3.style.zIndex = 1;
+
+  currentPage = "page3";
+
+  setTimeout(() => { spiral.style.zIndex = "10"; }, 500); // restore after flip
+});
+
+page3.addEventListener("click", () => {
+  spiral.style.zIndex = "1";
+  page3.style.transform = "rotateY(-180deg)";
+
+  page4.style.display = "block";
+  page4.style.transform = "rotateY(0deg)";
+  page4.style.zIndex = 2;
+
+  page2.style.display = "block";
+  page2.style.transform = "rotateY(0deg)";
+  page2.style.zIndex = 1;
+
+  currentPage = "page4";
+
+  setTimeout(() => { spiral.style.zIndex = "10"; }, 500);
+});
+
+page4.addEventListener("click", () => {
+  spiral.style.zIndex = "1";
+  page4.style.transform = "rotateY(180deg)";
+
+  page3.style.display = "block";
+  page3.style.transform = "rotateY(0deg)";
+  page3.style.zIndex = 2;
+
+  page2.style.display = "block";
+  page2.style.transform = "rotateY(0deg)";
+  page2.style.zIndex = 1;
+
+  currentPage = "page2";
+
+  setTimeout(() => { spiral.style.zIndex = "10"; }, 500);
+});
+
+page2.addEventListener("click", () => {
+  spiral.style.zIndex = "1";
+  page2.style.transform = "rotateY(180deg)";
+
+  page3.style.transform = "rotateY(0deg)";
+  page3.style.zIndex = 1;
+
+  page1.style.display = "block";
+  page1.style.transform = "rotateY(0deg)";
+  page1.style.zIndex = 2;
+
+  currentPage = "page1";
+
+  setTimeout(() => { spiral.style.zIndex = "10"; }, 500);
+});
+</script>
+</body>
+</html>

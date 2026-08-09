@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About NoteNest</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: transparent;
+    }
+
+    .page-bg {
+      position: relative;
+      left: -30px;
+      width: 75%;       /* fixed size for the page */
+      height: 75vh;     /* fixed height */
+      margin: 20px auto;  /* center horizontally with margin */
+      background: url("small_page.png") no-repeat center/cover;
+      border-radius: 8px;
+    }
+
+    /* title */
+    .title {
+      position: absolute;
+      top: 35px;
+      left: 40px;
+      font-family: 'Papyrus', 'Georgia', serif;
+      font-size: 26px;
+      font-style: italic;
+      color: #5a3e2b;
+      text-shadow: 1px 1px 2px #d8c7a1;
+    }
+
+    /* paragraph 1 */
+    .text1 {
+      font-style: italic;
+      position: absolute;
+      top: 90px;
+      left: 40px;
+      width: 70%;
+      font-size: 15px;
+      color: #3e2e1f;
+      line-height: 1.6;
+    }
+
+    .sticky {
+      position: absolute;
+      top: 300px;       /* adjust vertical position */
+      right: -80px;     /* adjust horizontal position */
+      width: 250px;    /* size of the sticky note */
+      transform: rotate(-5deg); /* slight tilt for realism */
+      opacity: 0.95;   /* soft blend with background */
+      z-index: 3;      /* ensure it sits above parchment and text */
+    }
+
+
+    /* paragraph 2 */
+    .text2 {
+      font-style: italic;
+      position: absolute;
+      top: 330px;
+      left: 160px;
+      width: 60%;
+      font-size: 13px;
+      color: #3e2e1f;
+      line-height: 1.6;
+      transform: rotate(-5deg); 
+      z-index: 4;
+    }
+
+    .flower {
+      position: absolute;
+      bottom: 70px;     /* move vertically */
+      left: 210px;       /* move horizontally */
+      width: 160px;     /* size of the flower */
+      transform: rotate(7deg); /* gentle tilt for natural look */
+      opacity: 1;    /* soft blend with background */
+      z-index: 3;       /* above parchment but below sticky note */
+    }
+
+    .bow {
+      position: absolute;
+      bottom: -120px;
+      right: 130px;
+      width: 150px;     /* bigger size */
+      opacity: 2;       /* fully visible */
+      transform: rotate(40deg);
+      z-index: 10;      /* ensure it’s on top */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="page-bg">
+  <h2 class="title">About NoteNest</h2>
+  <p class="text1">
+    <strong>NoteNest</strong> is a cozy digital notebook designed to make note‑taking feel warm and personal. It 
+    is a modern React notes app designed for productivity and creativity. helps you organize your 
+    thoughts by creating notebooks, managing notes.
+  </p>
+  <img src="sticky.png" alt="Sticky Note Decoration" class="sticky">
+  <p class="text2">
+    Whether you’re jotting down daily reflections, coding notes, or creative sketches,
+    NoteNest keeps everything beautifully arranged and easy to revisit.
+  </p>
+  <img src="flower.png" alt="Flower Decoration" class="flower">
+  <img src="bow.png" alt="Bow Decoration" class="bow">
+</div>
+
+</body>
+</html>
