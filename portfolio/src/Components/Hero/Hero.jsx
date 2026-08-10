@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./Hero.css";
+import note from "../../assets/Hero/stickyNote.png"
 
 const Hero = () => {
   const roles = ["Web Developer", "CS Student"];
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
+  const [chalkPos, setChalkPos] = useState(0); // chalk position
 
   useEffect(() => {
     let charIndex = 0;
@@ -12,21 +14,22 @@ const Hero = () => {
     let interval = setInterval(() => {
       if (charIndex < currentRole.length) {
         setDisplayText(currentRole.substring(0, charIndex + 1));
+        setChalkPos(charIndex * 20); // move chalk as letters appear
         charIndex++;
       } else {
         clearInterval(interval);
         setTimeout(() => {
-          // erase letter by letter
           let eraseIndex = currentRole.length;
           let eraseInterval = setInterval(() => {
             if (eraseIndex > 0) {
               setDisplayText(currentRole.substring(0, eraseIndex - 1));
+              setChalkPos((eraseIndex - 1) * 20); // move chalk back as letters erase
               eraseIndex--;
             } else {
               clearInterval(eraseInterval);
               setRoleIndex((roleIndex + 1) % roles.length);
             }
-          }, 80);
+          }, 100);
         }, 1500);
       }
     }, 120);
@@ -37,11 +40,19 @@ const Hero = () => {
   return (
     <div className="chalkboard-container">
     <div className="chalkboard-left">
-        <p className="chalk-text">Hi, I am <span className="name">Faiqa Aamer</span></p>
+        <p className="chalk-text">
+        Hi, I am <span className="name">Faiqa Aamer</span>
+        </p>
         <p className="chalk-role">{displayText}</p>
-        <div className="chalk-stick"></div>
+        <div
+        className="chalk-stick"
+        style={{ transform: `translateX(${chalkPos}px) rotate(13deg)` }}
+        ></div>
     </div>
-    <div className="chalkboard-right"></div>
+
+    <div className="chalkboard-right">
+        <img src={note} alt="Sticky Note" className="sticky-note" />
+    </div>
     </div>
   );
 };
