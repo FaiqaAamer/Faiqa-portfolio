@@ -40,18 +40,30 @@ const Hero = () => {
   return (
     <div className="chalkboard-container">
     <div className="chalkboard-left">
-        <p className="chalk-text">
-        Hi, I am <span className="name">Faiqa Aamer</span>
-        </p>
+        <p className="chalk-text">Hi, I am <span className="name">Faiqa Aamer</span></p>
         <p className="chalk-role">{displayText}</p>
         <div
-        className="chalk-stick"
-        style={{ transform: `translateX(${chalkPos}px) rotate(13deg)` }}
+            className="chalk-stick"
+            style={{ transform: `translateX(${chalkPos}px) rotate(13deg)` }}
         ></div>
+        <p className="chalk-tagline">
+        Computer Science student with a passion for clean code, good design, and building things that work
+        </p>
     </div>
 
     <div className="chalkboard-right">
-        <img src={note} alt="Sticky Note" className="sticky-note" />
+        <img src={note} alt="Sticky Note" className="sticky-note1" />
+        <p className="p1">Home</p>
+        <img src={note} alt="Sticky Note" className="sticky-note2" />
+        <p className="p2">About</p>
+        <img src={note} alt="Sticky Note" className="sticky-note3" />
+        <p className="p3">Skills</p>
+        <img src={note} alt="Sticky Note" className="sticky-note4" />
+        <p className="p4">Education</p>
+        <img src={note} alt="Sticky Note" className="sticky-note5" />
+        <p className="p5">Projects</p>
+        <img src={note} alt="Sticky Note" className="sticky-note6" />
+        <p className="p6">Contact</p>
     </div>
     </div>
   );

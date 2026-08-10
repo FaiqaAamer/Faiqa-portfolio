@@ -25,7 +25,7 @@
 }
 
 .chalk-text {
-  margin-top: -150px;
+  margin-top: -80px;
   text-transform: uppercase;
   font-family: "Shadows Into Light", cursive;
   font-weight: normal;
@@ -42,7 +42,7 @@
 }
 
 .chalk-role {
-  margin-top: -50px;
+  margin-top: -60px;
   text-transform: uppercase;
   font-family: "Shadows Into Light", cursive;
   font-weight: normal;
@@ -58,9 +58,26 @@
   filter: brightness(0.9) contrast(1.2);
 }
 
+.chalk-tagline {
+  margin-top: -10px;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 22px;
+  font-weight: normal;
+  text-transform: none;
+  background:
+    repeating-radial-gradient(#444 0 0.00003%, #ffffff 0.0004%) 50% 0/2500px 2500px,
+    repeating-conic-gradient(#555 0 0.00003%, #fefefe 0.0004%) 50% 50%/2500px 2500px;
+  background-blend-mode: screen;
+  mix-blend-mode: lighten;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: brightness(0.9) contrast(1.2);
+}
+
 .chalk-stick {
   position: absolute;
-  top: 51%;
+  top: 49%;
   left: 440px;
   width: 40px;
   height: 8px;
@@ -75,14 +92,104 @@
   100% { transform: translateX(300px) rotate(45deg); opacity: 1; }
 }
 
-.sticky-note {
-  width: 150px;
+/* Shared styles for all sticky notes */
+.sticky-note1,
+.sticky-note2,
+.sticky-note3,
+.sticky-note4,
+.sticky-note5,
+.sticky-note6 {
+  position: absolute;
+  width: 125px;
   height: auto;
-  margin-right: 100px;
-  transform: rotate(-5deg);
   transition: transform 0.3s ease;
 }
 
-.sticky-note:hover {
+.sticky-note1:hover,
+.sticky-note2:hover,
+.sticky-note3:hover,
+.sticky-note4:hover,
+.sticky-note5:hover,
+.sticky-note6:hover {
   transform: rotate(0deg) scale(1.05);
+}
+
+/* Independent positions */
+.sticky-note1 {
+  transform: rotate(-5deg);
+  top: -170px;
+  left: -20px;
+}
+
+.sticky-note2 {
+  transform: rotate(-5deg);
+  top: -180px;
+  left: 280px;
+}
+
+.sticky-note3 {
+  transform: rotate(15deg);
+  top: -250px;
+  left: 130px;
+}
+
+.sticky-note4 {
+  transform: rotate(-5deg);  
+  top: -90px;
+  left: 130px;
+}
+
+.sticky-note5 {
+  transform: rotate(20deg);
+  top: -10px;
+  left: 280px;
+}
+
+.sticky-note6 {
+  transform: rotate(-5deg);  
+  top: 10px;
+  left: 10px;
+}
+
+.p1, .p2, .p3, .p4, .p5, .p6 {
+  position: absolute;
+  font-family: "Shadows Into Light", cursive;
+  font-size: 25px;
+  color: #454343;
+  font-weight: bold;
+  z-index: 10;
+}
+
+.p1 { 
+  top: -125px;        
+  left: 9%;
+  transform: translateX(-50%) rotate(-15deg);   
+}
+.p2 { 
+  top: -205px;        
+  left: 44%;   
+  transform: translateX(-50%) rotate(5deg);
+}
+.p3 { 
+  top: 60px;        
+  left: 16%;   
+  transform: translateX(-50%) rotate(-15deg);
+}
+.p4 { 
+  font-size: 18px;
+  top: -35px;        
+  left: 43.5%;   
+  transform: translateX(-50%) rotate(-15deg);
+}
+.p5 { 
+  font-size: 21px;  
+  top: -125px;        
+  left: 78%;   
+  transform: translateX(-50%) rotate(-15deg);
+}
+.p6 { 
+  font-size: 23px;  
+  top: 40px;        
+  left: 78%;   
+  transform: translateX(-50%) rotate(10deg);
 }
