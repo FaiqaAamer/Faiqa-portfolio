@@ -8,10 +8,10 @@ import Hero from "./Components/Hero/Hero"
 
 function App() {
   return(<>
-  <Hero></Hero>
-  {/* <Project1></Project1>
+  {/* <Hero></Hero>
+  <Project1></Project1> */}
   <Contact></Contact>
-  <Clock></Clock>
+  {/* <Clock></Clock>
   <Education></Education>
   <Skills></Skills>
   <ToggleLamp></ToggleLamp> */}

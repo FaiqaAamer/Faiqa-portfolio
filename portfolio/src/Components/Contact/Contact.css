@@ -119,6 +119,49 @@ body {
   color: var(--brass-light);
 }
 
+.sm-icon {
+  font-size: 8px;
+  font-weight: 600;
+  color: var(--metalic);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  transition: color 0.2s ease;
+}
+
+.hole:hover .sm-icon,
+.hole:focus-visible .sm-icon {
+  color: var(--brass-light);
+}
+
+.contact-form.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.contact-form.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.close-btn {
+  margin-top: 10px;
+  background: #b7976a;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background: #e2c085;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;

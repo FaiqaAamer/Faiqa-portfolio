@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { FaHeart, FaEnvelope, FaFileAlt, FaLinkedin, FaGithub } from "react-icons/fa";
 import TelephoneFrontView from "../../assets/Contact/Telephone_front_view.png";
 import TelephoneBackView from "../../assets/Contact/Telephone_above_view.png";
+import dialSound from "../../assets/Sounds/click.mp3";
 import "./Contact.css";
 
 function Contact() {
@@ -14,11 +15,17 @@ function Contact() {
         { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }, // 4th heart
         { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }, // 5th heart
         { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }, // 6th heart
-        { icon: "mail", label: "Email", url: "mailto:hello@yourportfolio.com" }, // 7th email
+        { icon: "mail", label: "Email", url: "mailto:techwithfaiqa04@gmail.com" }, // 7th email
         { icon: "cv", label: "CV / Resume", url: "https://yourportfolio.com/resume.pdf" }, // 8th resume
-        { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }, // 9th heart
-        { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }  // 10th heart
+        { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" },  // 9th heart
+        { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" },  // 10th heart
+        { icon: "sm", label: "Send Message", url: "#" }
     ];
+
+    function playDialSound() {
+      const audio = new Audio(dialSound);
+      audio.play();
+    }
 
     function createHeartRain() {
     const palette = ["#f1e9d8", "#b7976a", "#e2c085", "#c0b8a8"]; 
@@ -94,7 +101,8 @@ function Contact() {
             mail: <FaEnvelope size={5} className="dial-icon"/>,
             cv: <FaFileAlt size={5} className="dial-icon"/>,
             linkedin: <FaLinkedin size={5} className="dial-icon"/>,
-            github: <FaGithub size={5} className="dial-icon"/>
+            github: <FaGithub size={5} className="dial-icon"/>,
+            sm: <div className="dial-icon sm-icon">SM</div>
         };
 
         import("react-dom/client").then(ReactDOM => {
@@ -133,22 +141,22 @@ function Contact() {
 
       makeGlyph(g, entry, hx, hy);
 
-      function go() {
-        g.classList.add("pressed");
-        setTimeout(() => {
-            g.classList.remove("pressed");
-
-            if (entry.icon === "heart") {
-            createHeartRain();
-            return; 
-            }
-            
-            if (entry.url && entry.url !== "#") {
-            window.open(entry.url, "_blank", "noopener");
-            }
-        }, 160);
+    function go() {
+      playDialSound(); 
+      setTimeout(() => {
+        if (entry.icon === "heart") {
+          createHeartRain();
+          return; 
         }
-
+        if (entry.url && entry.url !== "#") {
+          window.open(entry.url, "_blank", "noopener");
+        }
+        if (entry.icon === "sm") {
+          document.getElementById("contactForm").classList.add("show");
+          return;
+        }
+      }, 600);
+    }
 
       g.addEventListener("click", e => {
         e.stopPropagation();
@@ -194,6 +202,30 @@ function Contact() {
           </svg>
         </div>
       </div>
+      <div id="contactForm" className="contact-form hidden">
+  <form
+    action="mailto:techwithfaiqa04@gmail.com"
+    method="post"
+    encType="text/plain"
+  >
+    <h2>Send Message</h2>
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <input type="text" name="subject" placeholder="Subject" required />
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message ✈️</button>
+  </form>
+  <button
+    type="button"
+    className="close-btn"
+    onClick={() =>
+      document.getElementById("contactForm").classList.remove("show")
+    }
+  >
+    ✖ Close
+  </button>
+</div>
+
     </div>
   );
 }
