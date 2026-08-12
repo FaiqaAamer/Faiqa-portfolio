@@ -136,17 +136,77 @@ body {
   color: var(--brass-light);
 }
 
+#contactForm {
+  width: 450px;
+  height: 600px;
+  position: absolute;
+  bottom: -65%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  z-index: 999;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  background-image: url("../../assets/Contact/paper.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 20px;
+  font-family: 'Special Elite', monospace;
+  color: #2b1b0f;
+}
+
 .contact-form.hidden {
   opacity: 0;
-  transform: translateY(20px);
-  pointer-events: none;
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none; /* disables clicks when closed */
+  transform: translateX(-50%) translateY(-20px);
 }
 
 .contact-form.show {
   opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+  pointer-events: auto; /* enables clicks when open */
+  transform: translateX(-50%) translateY(0);
+  z-index: 999; /* ensures form stays above phone */
+}
+
+#contactForm h2 {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  padding-left: 120px;
+  color: #2b1b0f;
+}
+
+#contactForm input,
+#contactForm textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #b7976a;
+  background: transparent; 
+  color: #2b1b0f;
+  font-size: 1rem;
+  padding: 6px 4px;
+  margin-bottom: 10px;
+  outline: none;
+  font-family: 'Special Elite', monospace;
+}
+
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
+  color: #6b4e2e;
+  opacity: 0.8;
+}
+
+#contactForm button {
+  background: #b7976a;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+#contactForm button:hover {
+  background: #e2c085;
 }
 
 .close-btn {
