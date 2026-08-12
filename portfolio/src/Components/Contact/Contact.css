@@ -167,59 +167,82 @@ body {
   z-index: 999; /* ensures form stays above phone */
 }
 
-#contactForm h2 {
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-  padding-left: 120px;
-  color: #2b1b0f;
-}
-
 #contactForm input,
 #contactForm textarea {
-  width: 100%;
+  width: 75%;
   border: none;
   border-bottom: 2px solid #b7976a;
   background: transparent; 
-  color: #2b1b0f;
+  color: #604026;
   font-size: 1rem;
-  padding: 6px 4px;
+  margin-top: 30px;
+  margin-left: 40px;
   margin-bottom: 10px;
+  font-weight: 600;
   outline: none;
-  font-family: 'Special Elite', monospace;
+  font-family: 'Papyrus', 'Special Elite', monospace;
 }
 
 #contactForm input::placeholder,
 #contactForm textarea::placeholder {
-  color: #6b4e2e;
+  color: #51381d;
   opacity: 0.8;
 }
 
-#contactForm button {
+#contactForm .submit {
+  font-family: 'Papyrus', 'Special Elite', monospace;
   background: #b7976a;
   color: #fff;
   border: none;
-  padding: 8px 14px;
+  padding: 10px 14px;
+  margin-left: 140px;
+  margin-top: 45px;
   border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
   transition: background 0.3s ease;
 }
 
-#contactForm button:hover {
-  background: #e2c085;
+#contactForm .submit:hover {
+  background: #8a6c38;
 }
 
-.close-btn {
-  margin-top: 10px;
-  background: #b7976a;
-  color: #fff;
+.form-header {
+  font-family: 'Papyrus', 'Special Elite', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* default: title left, ✖ right */
+  margin-top: 15px;
+  margin-left: 45px;
+  margin-right: 53px;
+}
+
+.form-header.center {
+  justify-content: center; /* both centered */
+}
+
+.form-header.right {
+  justify-content: flex-end; /* push both to right */
+}
+
+.form-header.left {
+  justify-content: flex-start; /* push both to left */
+}
+
+.form-header h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  color: #2b1b0f;
+}
+
+.form-header .close-btn {
+  font-size: 25px;
+  background-color: none;
+  background: none;
+  color: #7a5413;
   border: none;
-  padding: 6px 12px;
   border-radius: 6px;
   cursor: pointer;
-}
-.close-btn:hover {
-  background: #e2c085;
 }
 
 .visually-hidden {

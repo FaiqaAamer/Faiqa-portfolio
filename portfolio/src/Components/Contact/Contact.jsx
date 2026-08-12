@@ -155,7 +155,7 @@ function Contact() {
           document.getElementById("contactForm").classList.add("show");
           return;
         }
-      }, 600);
+      }, 150);
     }
 
       g.addEventListener("click", e => {
@@ -208,22 +208,27 @@ function Contact() {
           method="post"
           encType="text/plain"
         >
-          <h2>Send Message</h2>
+          <div className="form-header">
+            <h2>Send Message</h2>
+            <button
+              type="button"
+              className="close-btn"
+              onClick={() => {
+                const form = document.getElementById("contactForm");
+                form.classList.remove("show");
+                form.classList.add("hidden");
+              }}
+            >
+              ✖
+            </button>
+          </div>
+
           <input type="text" name="name" placeholder="Your Name" required />
           <input type="email" name="email" placeholder="Your Email" required />
           <input type="text" name="subject" placeholder="Subject" required />
-          <textarea name="message" placeholder="Your Message" required></textarea>
-          <button type="submit">Send Message ✈️</button>
+          <textarea name="message" placeholder="Your Message" rows={4} required></textarea>
+          <button type="submit" className="submit">Send Message</button>
         </form>
-        <button
-          type="button"
-          className="close-btn"
-          onClick={() =>
-            document.getElementById("contactForm").classList.remove("show")
-          }
-        >
-          ✖ Close
-        </button>
       </div>
     </div>
   );
