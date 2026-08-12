@@ -16,7 +16,7 @@ function Contact() {
         { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }, // 5th heart
         { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" }, // 6th heart
         { icon: "mail", label: "Email", url: "mailto:techwithfaiqa04@gmail.com" }, // 7th email
-        { icon: "cv", label: "CV / Resume", url: "https://yourportfolio.com/resume.pdf" }, // 8th resume
+        { icon: "cv", label: "CV / Resume", url: "../../../public/Resume/FaiqaResume.pdf" }, // 8th resume
         { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" },  // 9th heart
         { icon: "heart", label: "Say hello", url: "https://yourportfolio.com" },  // 10th heart
         { icon: "sm", label: "Send Message", url: "#" }
