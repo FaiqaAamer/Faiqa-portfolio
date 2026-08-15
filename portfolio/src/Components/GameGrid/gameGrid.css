@@ -1,0 +1,88 @@
+.game-grid {
+  position: relative;
+  width: 1050px;       /* adjust to match your background image */
+  height: 650px;      /* adjust to match your background image */
+  margin: auto;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.grid-cell {
+  position: absolute; /* manual placement */
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-family: 'Special Elite', monospace;
+  font-size: 0.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-cell:hover {
+  transform: scale(1.05.);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.164);
+  color: #000;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  font-family: 'Special Elite', monospace;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-img {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  margin: 10px 0;
+}
+
+.github-link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #b7976a;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.github-link:hover {
+  color: #e2c085;
+}
+
+.close-btn {
+  margin-top: 15px;
+  background: #b7976a;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background: #e2c085;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

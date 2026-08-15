@@ -5,16 +5,18 @@ import Skills from "./Components/Skills/Skills"
 import ToggleLamp from "./Components/Toggler/ToggleLamp"
 import Project1 from "./Components/Project/Project1/Project1"
 import Hero from "./Components/Hero/Hero"
+import GameGrid from "./Components/GameGrid/gameGrid"
 
 function App() {
   return(<>
   {/* <Hero></Hero>
-  <Project1></Project1> */}
+  <Project1></Project1>
   <Contact></Contact>
-  {/* <Clock></Clock>
+  <Clock></Clock>
   <Education></Education>
   <Skills></Skills>
   <ToggleLamp></ToggleLamp> */}
+  <GameGrid></GameGrid>
   </>)  
 }
 
