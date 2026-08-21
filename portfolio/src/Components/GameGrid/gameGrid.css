@@ -68,11 +68,11 @@
 }
 
 .modal p {
-  max-width: 90%;        /* keeps it narrower */
-  margin: 0 auto;        /* centers the block */
-  text-align: justify;   /* aligns text evenly */
-  font-size: 0.9rem;     /* slightly smaller text */
-  line-height: 1.4;      /* improves readability */
+  max-width: 90%;        
+  margin: 0 auto;       
+  text-align: justify;  
+  font-size: 0.9rem;     
+  line-height: 1.4;      
 }
 
 .github-link {

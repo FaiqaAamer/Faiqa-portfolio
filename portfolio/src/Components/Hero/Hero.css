@@ -2,14 +2,14 @@
   display: flex;
   justify-content: space-between; /* separates both sides */
   align-items: center;
-  width: 1000px;
+  width: 900px;
   height: 70vh;
   background: url("../../assets/Hero/board.png") no-repeat center;
   background-size: cover;
 }
 
 .chalkboard-left {
-  width: 56%; /* fixed width instead of flex ratio */
+  width: 52%; /* fixed width instead of flex ratio */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +17,7 @@
 }
 
 .chalkboard-right {
-  width: 44%; /* independent width */
+  width: 45%; /* independent width */
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -25,11 +25,11 @@
 }
 
 .chalk-text {
-  margin-top: -80px;
+  margin-top: -75px;
   text-transform: uppercase;
   font-family: "Shadows Into Light", cursive;
   font-weight: normal;
-  font-size: 60px;
+  font-size: 50px;
   background:
     repeating-radial-gradient(#444 0 0.00003%, #ffffff 0.0004%) 50% 0/2500px 2500px,
     repeating-conic-gradient(#555 0 0.00003%, #fefefe 0.0004%) 50% 50%/2500px 2500px;
@@ -42,11 +42,11 @@
 }
 
 .chalk-role {
-  margin-top: -60px;
+  margin-top: -50px;
   text-transform: uppercase;
   font-family: "Shadows Into Light", cursive;
   font-weight: normal;
-  font-size: 30px;
+  font-size: 28px;
   background:
     repeating-radial-gradient(#444 0 0.00003%, #ffffff 0.0004%) 50% 0/2500px 2500px,
     repeating-conic-gradient(#555 0 0.00003%, #fefefe 0.0004%) 50% 50%/2500px 2500px;
@@ -59,9 +59,9 @@
 }
 
 .chalk-tagline {
-  margin-top: -10px;
+  margin-top: -15px;
   font-family: "Shadows Into Light", cursive;
-  font-size: 22px;
+  font-size: 18px;
   font-weight: normal;
   text-transform: none;
   background:
@@ -78,7 +78,7 @@
 .chalk-stick {
   position: absolute;
   top: 49%;
-  left: 440px;
+  left: 280px;
   width: 40px;
   height: 8px;
   background: linear-gradient(145deg, #ffffff 0%, #e0e0e0 100%);
@@ -105,50 +105,50 @@
   transition: transform 0.3s ease;
 }
 
-.sticky-note1:hover,
+/* .sticky-note1:hover,
 .sticky-note2:hover,
 .sticky-note3:hover,
 .sticky-note4:hover,
 .sticky-note5:hover,
 .sticky-note6:hover {
   transform: rotate(0deg) scale(1.05);
-}
+} */
 
 /* Independent positions */
 .sticky-note1 {
   transform: rotate(-5deg);
   top: -170px;
-  left: -20px;
+  left: -30px;
 }
 
 .sticky-note2 {
   transform: rotate(-5deg);
   top: -180px;
-  left: 280px;
+  left: 220px;
 }
 
 .sticky-note3 {
   transform: rotate(15deg);
-  top: -250px;
-  left: 130px;
+  top: -230px;
+  left: 90px;
 }
 
 .sticky-note4 {
-  transform: rotate(-5deg);  
+  transform: rotate(15deg);  
   top: -90px;
-  left: 130px;
+  left: 110px;
 }
 
 .sticky-note5 {
   transform: rotate(20deg);
-  top: -10px;
-  left: 280px;
+  top: -5px;
+  left: 220px;
 }
 
 .sticky-note6 {
   transform: rotate(-5deg);  
   top: 10px;
-  left: 10px;
+  left: 1px;
 }
 
 .p1, .p2, .p3, .p4, .p5, .p6 {
@@ -162,12 +162,12 @@
 
 .p1 { 
   top: -125px;        
-  left: 9%;
+  left: 7%;
   transform: translateX(-50%) rotate(-15deg);   
 }
 .p2 { 
-  top: -205px;        
-  left: 44%;   
+  top: -185px;        
+  left: 37%;   
   transform: translateX(-50%) rotate(5deg);
 }
 .p3 { 
@@ -178,18 +178,18 @@
 .p4 { 
   font-size: 18px;
   top: -35px;        
-  left: 43.5%;   
-  transform: translateX(-50%) rotate(-15deg);
+  left: 43%;   
+  transform: translateX(-50%) rotate(5deg);
 }
 .p5 { 
   font-size: 21px;  
-  top: -125px;        
-  left: 78%;   
+  top: -126px;        
+  left: 70%;   
   transform: translateX(-50%) rotate(-15deg);
 }
 .p6 { 
   font-size: 23px;  
   top: 40px;        
-  left: 78%;   
+  left: 70%;   
   transform: translateX(-50%) rotate(10deg);
 }

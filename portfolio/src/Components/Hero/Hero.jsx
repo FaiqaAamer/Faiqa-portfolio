@@ -14,7 +14,7 @@ const Hero = () => {
     let interval = setInterval(() => {
       if (charIndex < currentRole.length) {
         setDisplayText(currentRole.substring(0, charIndex + 1));
-        setChalkPos(charIndex * 20); // move chalk as letters appear
+        setChalkPos(charIndex * 18); // move chalk as letters appear
         charIndex++;
       } else {
         clearInterval(interval);
@@ -23,7 +23,7 @@ const Hero = () => {
           let eraseInterval = setInterval(() => {
             if (eraseIndex > 0) {
               setDisplayText(currentRole.substring(0, eraseIndex - 1));
-              setChalkPos((eraseIndex - 1) * 20); // move chalk back as letters erase
+              setChalkPos((eraseIndex - 1) * 18); // move chalk back as letters erase
               eraseIndex--;
             } else {
               clearInterval(eraseInterval);

@@ -9,14 +9,14 @@ import GameGrid from "./Components/GameGrid/gameGrid"
 
 function App() {
   return(<>
-  {/* <Hero></Hero>
-  <Project1></Project1>
+  <Hero></Hero>
+  {/* <Project1></Project1>
   <Contact></Contact>
   <Clock></Clock>
   <Education></Education>
   <Skills></Skills>
-  <ToggleLamp></ToggleLamp> */}
-  <GameGrid></GameGrid>
+  <ToggleLamp></ToggleLamp>
+  <GameGrid></GameGrid> */}
   </>)  
 }
 
